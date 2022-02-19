@@ -138,7 +138,6 @@ const urlEspacesVerts =
 espacesVerts = L.esri
   .featureLayer({
     url: urlEspacesVerts,
-    opacity: 1,
     style: function (feature) {
       let couleur;
       const petitParc = feature.properties.Shape__Area < 100000;
@@ -249,7 +248,8 @@ function afficheMeteo(objMeteo) {
   containerMeteo.innerHTML = 
   `<div class="meteo">
     <img src="${objMeteo.urlIcon}" title="${objMeteo.description}" class="meteoIcon">
-    <p class="meteo-titre">${objMeteo.description} ${objMeteo.temperature.toFixed()}&nbsp;C&deg;</p>
-    <p>Temps ress.: ${objMeteo.temps_ressenti.toFixed()}&nbsp;C&deg;</p>
+    <p class="meteo-titre">${objMeteo.description}</p>
+    <p>${objMeteo.temperature.toFixed()}&nbsp;C&deg;</p>
+    <p>Temps ress. ${objMeteo.temps_ressenti.toFixed()}&nbsp;C&deg;</p>
   </div>`;
 }
